@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="9605fc90-ff3c-42a0-9352-c11a025ff70f" activeEnvironment="Default" name="tariff-switching" resourceRoot="" soapui-version="5.1.3" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="38abd44c-839c-4b74-ae4d-baa8fc5ccf9a" wsaVersion="NONE" name="TariffSwitchingAdHocManagementPortSoap11" type="wsdl" bindingName="{http://www.alliander.com/definitions/osgp/tariffswitching/adhocmanagement-v1.0}TariffSwitchingAdHocManagementPortSoap11" soapVersion="1_1" anonymous="optional" definition="https://localhost:443/osgp-adapter-ws-tariffswitching/wsdl/ts/TariffSwitchingAdHocManagement.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://localhost:443/osgp-adapter-ws-tariffswitching/wsdl/ts/TariffSwitchingAdHocManagement.wsdl"><con:part><con:url>https://localhost:443/osgp-adapter-ws-tariffswitching/wsdl/ts/TariffSwitchingAdHocManagement.wsdl</con:url><con:content><![CDATA[<!--Platform version: 3.2.0-SNAPSHOT -->
+<wsdl:definitions targetNamespace="http://www.alliander.com/definitions/osgp/tariffswitching/adhocmanagement-v1.0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ahman="http://www.alliander.com/schemas/osgp/tariffswitching/adhocmanagement/2014/10" xmlns:common="http://www.alliander.com/schemas/osgp/common/2014/10" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.alliander.com/definitions/osgp/tariffswitching/adhocmanagement-v1.0">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.alliander.com/definitions/osgp/tariffswitching/adhocmanagement/imports" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="http://www.alliander.com/schemas/osgp/tariffswitching/adhocmanagement/2014/10" schemaLocation="schemas/ts-adhocmanagement.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="GetDevicesHeader">
+    <wsdl:part element="common:OrganisationIdentification" name="OrganisationIdentification"/>
+    <wsdl:part element="common:UserName" name="UserName"/>
+    <wsdl:part element="common:ApplicationName" name="ApplicationName"/>
+  </wsdl:message>
+  <wsdl:message name="GetDevicesRequest">
+    <wsdl:part element="ahman:GetDevicesRequest" name="GetDevicesRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetDevicesResponse">
+    <wsdl:part element="ahman:GetDevicesResponse" name="GetDevicesResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetStatusHeader">
+    <wsdl:part element="common:OrganisationIdentification" name="OrganisationIdentification"/>
+    <wsdl:part element="common:UserName" name="UserName"/>
+    <wsdl:part element="common:ApplicationName" name="ApplicationName"/>
+  </wsdl:message>
+  <wsdl:message name="GetStatusRequest">
+    <wsdl:part element="ahman:GetStatusRequest" name="GetStatusRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetStatusAsyncResponse">
+    <wsdl:part element="ahman:GetStatusAsyncResponse" name="GetStatusAsyncResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetStatusAsyncHeader">
+    <wsdl:part element="common:OrganisationIdentification" name="OrganisationIdentification"/>
+    <wsdl:part element="common:UserName" name="UserName"/>
+    <wsdl:part element="common:ApplicationName" name="ApplicationName"/>
+  </wsdl:message>
+  <wsdl:message name="GetStatusAsyncRequest">
+    <wsdl:part element="ahman:GetStatusAsyncRequest" name="GetStatusAsyncRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetStatusResponse">
+    <wsdl:part element="ahman:GetStatusResponse" name="GetStatusResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="TariffSwitchingAdHocManagementPort">
+    <wsdl:operation name="GetDevices">
+      <wsdl:input message="tns:GetDevicesRequest" name="GetDevicesRequest"></wsdl:input>
+      <wsdl:output message="tns:GetDevicesResponse" name="GetDevicesResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatus">
+      <wsdl:input message="tns:GetStatusRequest" name="GetStatusRequest"></wsdl:input>
+      <wsdl:output message="tns:GetStatusAsyncResponse" name="GetStatusAsyncResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGetStatusResponse">
+      <wsdl:input message="tns:GetStatusAsyncRequest" name="GetStatusAsyncRequest"></wsdl:input>
+      <wsdl:output message="tns:GetStatusResponse" name="GetStatusResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TariffSwitchingAdHocManagementPortSoap11" type="tns:TariffSwitchingAdHocManagementPort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetDevices">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="GetDevicesRequest">
+        <soap:header message="tns:GetDevicesHeader" part="OrganisationIdentification" use="literal"/>
+        <soap:header message="tns:GetDevicesHeader" part="UserName" use="literal"/>
+        <soap:header message="tns:GetDevicesHeader" part="ApplicationName" use="literal"/>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetDevicesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatus">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="GetStatusRequest">
+        <soap:header message="tns:GetStatusHeader" part="OrganisationIdentification" use="literal"/>
+        <soap:header message="tns:GetStatusHeader" part="UserName" use="literal"/>
+        <soap:header message="tns:GetStatusHeader" part="ApplicationName" use="literal"/>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetStatusAsyncResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGetStatusResponse">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="GetStatusAsyncRequest">
+        <soap:header message="tns:GetStatusAsyncHeader" part="OrganisationIdentification" use="literal"/>
+        <soap:header message="tns:GetStatusAsyncHeader" part="UserName" use="literal"/>
+        <soap:header message="tns:GetStatusAsyncHeader" part="ApplicationName" use="literal"/>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetStatusResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TariffSwitchingAdHocManagementPortService">
+    <wsdl:port binding="tns:TariffSwitchingAdHocManagementPortSoap11" name="TariffSwitchingAdHocManagementPortSoap11">
+      <soap:address location="https://localhost:443/osgp-adapter-ws-tariffswitching/tariffSwitching/adHocManagementService/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>https://localhost:443/osgp-adapter-ws-tariffswitching/wsdl/ts/schemas/ts-adhocmanagement.xsd</con:url><con:content><![CDATA[<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.alliander.com/schemas/osgp/tariffswitching/adhocmanagement/2014/10" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:common="http://www.alliander.com/schemas/osgp/common/2014/10" xmlns:tns="http://www.alliander.com/schemas/osgp/tariffswitching/adhocmanagement/2014/10">
+  <xsd:import namespace="http://www.alliander.com/schemas/osgp/common/2014/10" schemaLocation="common.xsd"/>
+  <xsd:element name="GetDevicesRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Page" type="xsd:int"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="GetDevicesResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="DevicePage" type="tns:DevicePage"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="GetStatusRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="1" name="DeviceIdentification" type="common:Identification"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="GetStatusAsyncResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="AsyncResponse" type="common:AsyncResponse"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="GetStatusAsyncRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="AsyncRequest" type="common:AsyncRequest"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="GetStatusResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="1" name="Result" type="common:OsgpResultType"/>
+        <xsd:element name="Description" type="xsd:string"/>
+        <xsd:element name="DeviceStatus" type="tns:DeviceStatus"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:complexType name="DeviceStatus">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" name="TariffValues" type="tns:TariffValue"/>
+      <xsd:element maxOccurs="1" minOccurs="1" name="PreferredLinkType" type="tns:LinkType"/>
+      <xsd:element maxOccurs="1" minOccurs="1" name="ActualLinkType" type="tns:LinkType"/>
+      <xsd:element maxOccurs="8" minOccurs="0" name="EventNotifications" type="tns:EventNotificationType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Device">
+    <xsd:sequence>
+      <xsd:element name="DeviceUid" type="xsd:string"/>
+      <xsd:element name="DeviceIdentification" type="common:Identification"/>
+      <xsd:element name="DeviceType" type="xsd:string"/>
+      <xsd:element name="Activated" type="xsd:boolean"/>
+      <xsd:element name="HasSchedule" type="xsd:boolean"/>
+      <xsd:element name="PublicKeyPresent" type="xsd:boolean"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="DevicePage">
+    <xsd:sequence>
+      <xsd:element name="TotalPages" type="xsd:int"/>
+      <xsd:element maxOccurs="unbounded" name="Devices" type="tns:Device"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="TariffValue">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Index">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:int">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="6"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="High" type="xsd:boolean"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="LinkType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="LINK_NOT_SET"/>
+      <xsd:enumeration value="GPRS"/>
+      <xsd:enumeration value="CDMA"/>
+      <xsd:enumeration value="ETHERNET"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="EventNotificationType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="DIAG_EVENTS"/>
+      <xsd:enumeration value="HARDWARE_FAILURE"/>
+      <xsd:enumeration value="LIGHT_EVENTS"/>
+      <xsd:enumeration value="TARIFF_EVENTS"/>
+      <xsd:enumeration value="MONITOR_EVENTS"/>
+      <xsd:enumeration value="FIRMWARE_EVENTS"/>
+      <xsd:enumeration value="COMM_EVENTS"/>
+      <xsd:enumeration value="SECURITY_EVENTS"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://localhost:443/osgp-adapter-ws-tariffswitching/wsdl/ts/schemas/common.xsd</con:url><con:content><![CDATA[<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.alliander.com/schemas/osgp/common/2014/10" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.alliander.com/schemas/osgp/common/2014/10">
+  <xsd:element name="OrganisationIdentification" type="tns:Identification"/>
+  <xsd:element name="UserName" type="tns:Identification"/>
+  <xsd:element name="ApplicationName" type="tns:Identification"/>
+  <xsd:simpleType name="Identification">
+    <xsd:restriction base="xsd:normalizedString">
+      <xsd:minLength value="1"/>
+      <xsd:maxLength value="40"/>
+      <xsd:pattern value="[^ ]{0,40}"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="Page">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="1" name="TotalPages" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="1" name="PageSize" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="1" name="CurrentPage" type="xsd:int"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="CorrelationUid">
+    <xsd:restriction base="xsd:normalizedString">
+      <xsd:minLength value="20"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="AsyncRequest">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="CorrelationUid" type="tns:CorrelationUid"/>
+      <xsd:element minOccurs="1" name="DeviceId" type="tns:Identification"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="AsyncResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="CorrelationUid" type="tns:CorrelationUid"/>
+      <xsd:element minOccurs="1" name="DeviceId" type="tns:Identification"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="OsgpResultType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="OK"/>
+      <xsd:enumeration value="NOT FOUND"/>
+      <xsd:enumeration value="NOT OK"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:element name="FunctionalFault">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element maxOccurs="1" minOccurs="1" name="Code" type="xsd:int"/>
+        <xsd:element maxOccurs="1" minOccurs="1" name="Message" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="1" name="Component" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="1" name="InnerException" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="1" name="InnerMessage" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="TechnicalFault">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element maxOccurs="1" minOccurs="1" name="Message" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="1" name="Component" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="1" name="InnerException" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="1" name="InnerMessage" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://localhost:443/osgp-adapter-ws-tariffswitching/tariffSwitching/adHocManagementService/</con:endpoint></con:endpoints><con:operation id="3f02746d-a663-4dce-961b-12646081c212" isOneWay="false" action="" name="GetDevices" bindingOperationName="GetDevices" type="Request-Response" outputName="GetDevicesResponse" inputName="GetDevicesRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d72dbdfb-d008-4787-accd-a91356ac1d98" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://localhost:443/osgp-adapter-ws-tariffswitching/tariffSwitching/adHocManagementService/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.alliander.com/schemas/osgp/common/2014/10" xmlns:ns1="http://www.alliander.com/schemas/osgp/tariffswitching/adhocmanagement/2014/10">
+   <soapenv:Header>
+      <ns:ApplicationName>${#Project#soapHeaderAppName}</ns:ApplicationName>
+      <ns:UserName>${#Project#soapHeaderUserName}</ns:UserName>
+      <ns:OrganisationIdentification>${#Project#soapHeaderOrgId}</ns:OrganisationIdentification>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ns1:GetDevicesRequest>
+         <!--type: int-->
+         <ns1:Page>0</ns1:Page>
+      </ns1:GetDevicesRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.alliander.com/definitions/osgp/tariffswitching/adhocmanagement-v1.0/TariffSwitchingAdHocManagementPort/GetDevicesRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="78205676-9f3b-4760-bcd8-6c18b446c16d" isOneWay="false" action="" name="GetGetStatusResponse" bindingOperationName="GetGetStatusResponse" type="Request-Response" outputName="GetStatusResponse" inputName="GetStatusAsyncRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="327a3e10-4706-4411-a05e-91933171fc7d" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://localhost:443/osgp-adapter-ws-tariffswitching/tariffSwitching/adHocManagementService/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.alliander.com/schemas/osgp/common/2014/10" xmlns:ns1="http://www.alliander.com/schemas/osgp/tariffswitching/adhocmanagement/2014/10">
+   <soapenv:Header>
+      <ns:ApplicationName>${#Project#soapHeaderAppName}</ns:ApplicationName>
+      <ns:UserName>${#Project#soapHeaderUserName}</ns:UserName>
+      <ns:OrganisationIdentification>${#Project#soapHeaderOrgId}</ns:OrganisationIdentification>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ns1:GetStatusAsyncRequest>
+         <ns1:AsyncRequest>
+            <!--type: CorrelationUid-->
+            <ns:CorrelationUid>test-org|||ELS_000-00-01|||20160306171359690</ns:CorrelationUid>
+            <!--type: Identification-->
+            <ns:DeviceId>${#Project#deviceIdentification}</ns:DeviceId>
+         </ns1:AsyncRequest>
+      </ns1:GetStatusAsyncRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.alliander.com/definitions/osgp/tariffswitching/adhocmanagement-v1.0/TariffSwitchingAdHocManagementPort/GetStatusAsyncRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="315c4014-3afb-48dc-9b17-12d9acabc2de" isOneWay="false" action="" name="GetStatus" bindingOperationName="GetStatus" type="Request-Response" outputName="GetStatusAsyncResponse" inputName="GetStatusRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="28118f65-cc20-432a-b8c1-bf142208939e" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://localhost:443/osgp-adapter-ws-tariffswitching/tariffSwitching/adHocManagementService/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.alliander.com/schemas/osgp/common/2014/10" xmlns:ns1="http://www.alliander.com/schemas/osgp/tariffswitching/adhocmanagement/2014/10">
+   <soapenv:Header>
+      <ns:ApplicationName>${#Project#soapHeaderAppName}</ns:ApplicationName>
+      <ns:UserName>${#Project#soapHeaderUserName}</ns:UserName>
+      <ns:OrganisationIdentification>${#Project#soapHeaderOrgId}</ns:OrganisationIdentification>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ns1:GetStatusRequest>
+         <!--type: Identification-->
+         <ns1:DeviceIdentification>${#Project#deviceIdentification}</ns1:DeviceIdentification>
+      </ns1:GetStatusRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.alliander.com/definitions/osgp/tariffswitching/adhocmanagement-v1.0/TariffSwitchingAdHocManagementPort/GetStatusRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="3b93b1b8-61de-43e8-b76a-9de929ec266b" wsaVersion="NONE" name="TariffSwitchingScheduleManagementPortSoap11" type="wsdl" bindingName="{http://www.alliander.com/definitions/osgp/tariffswitching/schedulemanagement-v1.0}TariffSwitchingScheduleManagementPortSoap11" soapVersion="1_1" anonymous="optional" definition="https://localhost:443/osgp-adapter-ws-tariffswitching/wsdl/ts/TariffSwitchingScheduleManagement.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://localhost:443/osgp-adapter-ws-tariffswitching/wsdl/ts/TariffSwitchingScheduleManagement.wsdl"><con:part><con:url>https://localhost:443/osgp-adapter-ws-tariffswitching/wsdl/ts/TariffSwitchingScheduleManagement.wsdl</con:url><con:content><![CDATA[<!--Platform version: 3.2.0-SNAPSHOT -->
+<wsdl:definitions targetNamespace="http://www.alliander.com/definitions/osgp/tariffswitching/schedulemanagement-v1.0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:common="http://www.alliander.com/schemas/osgp/common/2014/10" xmlns:sman="http://www.alliander.com/schemas/osgp/tariffswitching/schedulemanagement/2014/10" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.alliander.com/definitions/osgp/tariffswitching/schedulemanagement-v1.0">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.alliander.com/definitions/osgp/tariffswitching/schedulemanagement/imports" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="http://www.alliander.com/schemas/osgp/tariffswitching/schedulemanagement/2014/10" schemaLocation="schemas/ts-schedulemanagement.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="SetScheduleHeader">
+    <wsdl:part element="common:OrganisationIdentification" name="OrganisationIdentification"/>
+    <wsdl:part element="common:UserName" name="UserName"/>
+    <wsdl:part element="common:ApplicationName" name="ApplicationName"/>
+  </wsdl:message>
+  <wsdl:message name="SetScheduleRequest">
+    <wsdl:part element="sman:SetScheduleRequest" name="SetScheduleRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SetScheduleAsyncResponse">
+    <wsdl:part element="sman:SetScheduleAsyncResponse" name="SetScheduleAsyncResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SetScheduleAsyncHeader">
+    <wsdl:part element="common:OrganisationIdentification" name="OrganisationIdentification"/>
+    <wsdl:part element="common:UserName" name="UserName"/>
+    <wsdl:part element="common:ApplicationName" name="ApplicationName"/>
+  </wsdl:message>
+  <wsdl:message name="SetScheduleAsyncRequest">
+    <wsdl:part element="sman:SetScheduleAsyncRequest" name="SetScheduleAsyncRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SetScheduleResponse">
+    <wsdl:part element="sman:SetScheduleResponse" name="SetScheduleResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="TariffSwitchingScheduleManagementPort">
+    <wsdl:operation name="SetSchedule">
+      <wsdl:input message="tns:SetScheduleRequest" name="SetScheduleRequest"></wsdl:input>
+      <wsdl:output message="tns:SetScheduleAsyncResponse" name="SetScheduleAsyncResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSetScheduleResponse">
+      <wsdl:input message="tns:SetScheduleAsyncRequest" name="SetScheduleAsyncRequest"></wsdl:input>
+      <wsdl:output message="tns:SetScheduleResponse" name="SetScheduleResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TariffSwitchingScheduleManagementPortSoap11" type="tns:TariffSwitchingScheduleManagementPort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="SetSchedule">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="SetScheduleRequest">
+        <soap:header message="tns:SetScheduleHeader" part="OrganisationIdentification" use="literal"/>
+        <soap:header message="tns:SetScheduleHeader" part="UserName" use="literal"/>
+        <soap:header message="tns:SetScheduleHeader" part="ApplicationName" use="literal"/>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="SetScheduleAsyncResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSetScheduleResponse">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="SetScheduleAsyncRequest">
+        <soap:header message="tns:SetScheduleAsyncHeader" part="OrganisationIdentification" use="literal"/>
+        <soap:header message="tns:SetScheduleAsyncHeader" part="UserName" use="literal"/>
+        <soap:header message="tns:SetScheduleAsyncHeader" part="ApplicationName" use="literal"/>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="SetScheduleResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TariffSwitchingScheduleManagementPortService">
+    <wsdl:port binding="tns:TariffSwitchingScheduleManagementPortSoap11" name="TariffSwitchingScheduleManagementPortSoap11">
+      <soap:address location="https://localhost:443/osgp-adapter-ws-tariffswitching/tariffSwitching/scheduleManagementService/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>https://localhost:443/osgp-adapter-ws-tariffswitching/wsdl/ts/schemas/ts-schedulemanagement.xsd</con:url><con:content><![CDATA[<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.alliander.com/schemas/osgp/tariffswitching/schedulemanagement/2014/10" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:common="http://www.alliander.com/schemas/osgp/common/2014/10" xmlns:tns="http://www.alliander.com/schemas/osgp/tariffswitching/schedulemanagement/2014/10">
+  <xsd:import namespace="http://www.alliander.com/schemas/osgp/common/2014/10" schemaLocation="common.xsd"/>
+  <xsd:element name="SetScheduleRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="DeviceIdentification" type="common:Identification"/>
+        <xsd:element maxOccurs="50" name="Schedules" type="tns:TariffSchedule"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="Page" type="common:Page"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="scheduled_time" type="xsd:dateTime"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="SetScheduleAsyncResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="1" name="AsyncResponse" type="common:AsyncResponse"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="SetScheduleAsyncRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="1" name="AsyncRequest" type="common:AsyncRequest"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="SetScheduleResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="1" name="Result" type="common:OsgpResultType"/>
+        <xsd:element name="Description" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:complexType name="TariffSchedule">
+    <xsd:sequence>
+      <xsd:element name="WeekDay" type="tns:WeekDayType"/>
+      <xsd:element minOccurs="0" name="StartDay" type="xsd:date"/>
+      <xsd:element minOccurs="0" name="EndDay" type="xsd:date"/>
+      <xsd:element minOccurs="1" name="Time" type="xsd:string"/>
+      <xsd:element maxOccurs="6" name="TariffValue" type="tns:TariffValue"/>
+      <xsd:element minOccurs="0" name="Index" type="xsd:int"/>
+      <xsd:element minOccurs="0" name="IsEnabled" type="xsd:boolean"/>
+      <xsd:element minOccurs="0" name="minimumLightsOn" type="xsd:int"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="TariffValue">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Index">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:int">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="6"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="High" type="xsd:boolean"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="WeekDayType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="MONDAY"/>
+      <xsd:enumeration value="TUESDAY"/>
+      <xsd:enumeration value="WEDNESDAY"/>
+      <xsd:enumeration value="THURSDAY"/>
+      <xsd:enumeration value="FRIDAY"/>
+      <xsd:enumeration value="SATURDAY"/>
+      <xsd:enumeration value="SUNDAY"/>
+      <xsd:enumeration value="WEEKDAY"/>
+      <xsd:enumeration value="WEEKEND"/>
+      <xsd:enumeration value="ABSOLUTEDAY"/>
+      <xsd:enumeration value="ALL"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://localhost:443/osgp-adapter-ws-tariffswitching/wsdl/ts/schemas/common.xsd</con:url><con:content><![CDATA[<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.alliander.com/schemas/osgp/common/2014/10" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.alliander.com/schemas/osgp/common/2014/10">
+  <xsd:element name="OrganisationIdentification" type="tns:Identification"/>
+  <xsd:element name="UserName" type="tns:Identification"/>
+  <xsd:element name="ApplicationName" type="tns:Identification"/>
+  <xsd:simpleType name="Identification">
+    <xsd:restriction base="xsd:normalizedString">
+      <xsd:minLength value="1"/>
+      <xsd:maxLength value="40"/>
+      <xsd:pattern value="[^ ]{0,40}"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="Page">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="1" name="TotalPages" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="1" name="PageSize" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="1" name="CurrentPage" type="xsd:int"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="CorrelationUid">
+    <xsd:restriction base="xsd:normalizedString">
+      <xsd:minLength value="20"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="AsyncRequest">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="CorrelationUid" type="tns:CorrelationUid"/>
+      <xsd:element minOccurs="1" name="DeviceId" type="tns:Identification"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="AsyncResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="CorrelationUid" type="tns:CorrelationUid"/>
+      <xsd:element minOccurs="1" name="DeviceId" type="tns:Identification"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="OsgpResultType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="OK"/>
+      <xsd:enumeration value="NOT FOUND"/>
+      <xsd:enumeration value="NOT OK"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:element name="FunctionalFault">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element maxOccurs="1" minOccurs="1" name="Code" type="xsd:int"/>
+        <xsd:element maxOccurs="1" minOccurs="1" name="Message" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="1" name="Component" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="1" name="InnerException" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="1" name="InnerMessage" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="TechnicalFault">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element maxOccurs="1" minOccurs="1" name="Message" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="1" name="Component" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="1" name="InnerException" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="1" name="InnerMessage" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://localhost:443/osgp-adapter-ws-tariffswitching/tariffSwitching/scheduleManagementService/</con:endpoint></con:endpoints><con:operation id="15fcb2a4-af30-4032-9252-236c2f61ed19" isOneWay="false" action="" name="GetSetScheduleResponse" bindingOperationName="GetSetScheduleResponse" type="Request-Response" outputName="SetScheduleResponse" inputName="SetScheduleAsyncRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="6da69808-c18b-4a68-8375-cd4756a2f726" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://localhost:443/osgp-adapter-ws-tariffswitching/tariffSwitching/scheduleManagementService/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.alliander.com/schemas/osgp/common/2014/10" xmlns:ns1="http://www.alliander.com/schemas/osgp/tariffswitching/schedulemanagement/2014/10">
+   <soapenv:Header>
+      <ns:ApplicationName>${#Project#soapHeaderAppName}</ns:ApplicationName>
+      <ns:UserName>${#Project#soapHeaderUserName}</ns:UserName>
+      <ns:OrganisationIdentification>${#Project#soapHeaderOrgId}</ns:OrganisationIdentification>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ns1:SetScheduleAsyncRequest>
+         <ns1:AsyncRequest>
+            <!--type: CorrelationUid-->
+            <ns:CorrelationUid>gero etgero etgero etgero et</ns:CorrelationUid>
+            <!--type: Identification-->
+            <ns:DeviceId>${#Project#deviceIdentification}</ns:DeviceId>
+         </ns1:AsyncRequest>
+      </ns1:SetScheduleAsyncRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.alliander.com/definitions/osgp/tariffswitching/schedulemanagement-v1.0/TariffSwitchingScheduleManagementPort/SetScheduleAsyncRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="24c7dbb7-0b85-4052-9371-02f816c9c6c4" isOneWay="false" action="" name="SetSchedule" bindingOperationName="SetSchedule" type="Request-Response" outputName="SetScheduleAsyncResponse" inputName="SetScheduleRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="fe65367e-0596-4672-94da-c1607bbab1d2" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://localhost:443/osgp-adapter-ws-tariffswitching/tariffSwitching/scheduleManagementService/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.alliander.com/schemas/osgp/common/2014/10" xmlns:ns1="http://www.alliander.com/schemas/osgp/tariffswitching/schedulemanagement/2014/10">
+   <soapenv:Header>
+      <ns:ApplicationName>${#Project#soapHeaderAppName}</ns:ApplicationName>
+      <ns:UserName>${#Project#soapHeaderUserName}</ns:UserName>
+      <ns:OrganisationIdentification>${#Project#soapHeaderOrgId}</ns:OrganisationIdentification>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ns1:SetScheduleRequest>
+         <!--type: Identification-->
+         <ns1:DeviceIdentification>${#Project#deviceIdentification}</ns1:DeviceIdentification>
+         <!--1 to 50 repetitions:-->
+         <ns1:Schedules>
+            <!--type: WeekDayType - enumeration: [MONDAY,TUESDAY,WEDNESDAY,THURSDAY,FRIDAY,SATURDAY,SUNDAY,WEEKDAY,WEEKEND,ABSOLUTEDAY,ALL]-->
+            <ns1:WeekDay>WEEKEND</ns1:WeekDay>
+            <!--Optional:-->
+            <!--type: date-->
+            <ns1:StartDay>2014-09-19</ns1:StartDay>
+            <!--Optional:-->
+            <!--type: date-->
+            <ns1:EndDay>2006-08-19+02:00</ns1:EndDay>
+            <!--type: string-->
+            <ns1:Time>turbine corripuit</ns1:Time>
+            <!--1 to 6 repetitions:-->
+            <ns1:TariffValue>
+               <!--Optional:-->
+               <!--anonymous type-->
+               <ns1:Index>3</ns1:Index>
+               <!--type: boolean-->
+               <ns1:High>true</ns1:High>
+            </ns1:TariffValue>
+            <!--Optional:-->
+            <!--type: int-->
+            <ns1:Index>3</ns1:Index>
+            <!--Optional:-->
+            <!--type: boolean-->
+            <ns1:IsEnabled>false</ns1:IsEnabled>
+            <!--Optional:-->
+            <!--type: int-->
+            <ns1:minimumLightsOn>3</ns1:minimumLightsOn>
+         </ns1:Schedules>
+         <!--Optional:-->
+         <ns1:Page>
+            <!--type: int-->
+            <ns:TotalPages>3</ns:TotalPages>
+            <!--type: int-->
+            <ns:PageSize>3</ns:PageSize>
+            <!--type: int-->
+            <ns:CurrentPage>3</ns:CurrentPage>
+         </ns1:Page>
+         <!--Optional:-->
+         <!--type: dateTime-->
+         <ns1:scheduled_time>2002-11-05T09:01:03+01:00</ns1:scheduled_time>
+      </ns1:SetScheduleRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.alliander.com/definitions/osgp/tariffswitching/schedulemanagement-v1.0/TariffSwitchingScheduleManagementPort/SetScheduleRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties><con:property><con:name>deviceIdentification</con:name><con:value>ELS_000-00-01</con:value></con:property><con:property><con:name>soapHeaderAppName</con:name><con:value>SoapUI</con:value></con:property><con:property><con:name>soapHeaderUserName</con:name><con:value>user name</con:value></con:property><con:property><con:name>soapHeaderOrgId</con:name><con:value>test-org</con:value></con:property></con:properties><con:wssContainer><con:crypto><con:source>/home/dev/Sources/Config/certificates/osgp-ca/certs/test-org.pfx</con:source><con:password>1234</con:password><con:type>KEYSTORE</con:type></con:crypto></con:wssContainer><con:oAuth2ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

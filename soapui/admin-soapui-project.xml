@@ -1,0 +1,871 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="62ca7a1a-cce8-4220-a213-acb69b4ded2e" activeEnvironment="Default" name="admin" resourceRoot="" soapui-version="5.1.3" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="c41dbd2f-2a62-44ab-bfa9-fbd888edef1d" wsaVersion="NONE" name="DeviceManagementPortSoap11" type="wsdl" bindingName="{http://www.alliander.com/definitions/osgp/admin/devicemanagement-v1.0}DeviceManagementPortSoap11" soapVersion="1_1" anonymous="optional" definition="https://localhost/osgp-adapter-ws-admin/wsdl/admin/DeviceManagement.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://localhost/osgp-adapter-ws-admin/wsdl/admin/DeviceManagement.wsdl"><con:part><con:url>https://localhost/osgp-adapter-ws-admin/wsdl/admin/DeviceManagement.wsdl</con:url><con:content><![CDATA[<!--Platform version: 3.2.0-SNAPSHOT -->
+<wsdl:definitions targetNamespace="http://www.alliander.com/definitions/osgp/admin/devicemanagement-v1.0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:common="http://www.alliander.com/schemas/osgp/common/2014/10" xmlns:dman="http://www.alliander.com/schemas/osgp/admin/devicemanagement/2014/10" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.alliander.com/definitions/osgp/admin/devicemanagement-v1.0">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.alliander.com/definitions/osgp/admin/devicemanagement/imports" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="http://www.alliander.com/schemas/osgp/admin/devicemanagement/2014/10" schemaLocation="schemas/devicemanagement.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="FindMessageLogsHeader">
+    <wsdl:part element="common:OrganisationIdentification" name="OrganisationIdentification"/>
+    <wsdl:part element="common:UserName" name="UserName"/>
+    <wsdl:part element="common:ApplicationName" name="ApplicationName"/>
+  </wsdl:message>
+  <wsdl:message name="FindMessageLogsResponse">
+    <wsdl:part element="dman:FindMessageLogsResponse" name="FindMessageLogsResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="FindMessageLogsRequest">
+    <wsdl:part element="dman:FindMessageLogsRequest" name="FindMessageLogsRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="FindDeviceAuthorisationsHeader">
+    <wsdl:part element="common:OrganisationIdentification" name="OrganisationIdentification"/>
+    <wsdl:part element="common:UserName" name="UserName"/>
+    <wsdl:part element="common:ApplicationName" name="ApplicationName"/>
+  </wsdl:message>
+  <wsdl:message name="FindDeviceAuthorisationsRequest">
+    <wsdl:part element="dman:FindDeviceAuthorisationsRequest" name="FindDeviceAuthorisationsRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="FindDeviceAuthorisationsResponse">
+    <wsdl:part element="dman:FindDeviceAuthorisationsResponse" name="FindDeviceAuthorisationsResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="FindDevicesWhichHaveNoOwnerHeader">
+    <wsdl:part element="common:OrganisationIdentification" name="OrganisationIdentification"/>
+    <wsdl:part element="common:UserName" name="UserName"/>
+    <wsdl:part element="common:ApplicationName" name="ApplicationName"/>
+  </wsdl:message>
+  <wsdl:message name="FindDevicesWhichHaveNoOwnerRequest">
+    <wsdl:part element="dman:FindDevicesWhichHaveNoOwnerRequest" name="FindDevicesWhichHaveNoOwnerRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="FindDevicesWhichHaveNoOwnerResponse">
+    <wsdl:part element="dman:FindDevicesWhichHaveNoOwnerResponse" name="FindDevicesWhichHaveNoOwnerResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="RemoveOrganisationHeader">
+    <wsdl:part element="common:OrganisationIdentification" name="OrganisationIdentification"/>
+    <wsdl:part element="common:UserName" name="UserName"/>
+    <wsdl:part element="common:ApplicationName" name="ApplicationName"/>
+  </wsdl:message>
+  <wsdl:message name="RemoveOrganisationRequest">
+    <wsdl:part element="dman:RemoveOrganisationRequest" name="RemoveOrganisationRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="RemoveOrganisationResponse">
+    <wsdl:part element="dman:RemoveOrganisationResponse" name="RemoveOrganisationResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ActivateOrganisationHeader">
+    <wsdl:part element="common:OrganisationIdentification" name="OrganisationIdentification"/>
+    <wsdl:part element="common:UserName" name="UserName"/>
+    <wsdl:part element="common:ApplicationName" name="ApplicationName"/>
+  </wsdl:message>
+  <wsdl:message name="ActivateOrganisationRequest">
+    <wsdl:part element="dman:ActivateOrganisationRequest" name="ActivateOrganisationRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ActivateOrganisationResponse">
+    <wsdl:part element="dman:ActivateOrganisationResponse" name="ActivateOrganisationResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ChangeOrganisationHeader">
+    <wsdl:part element="common:OrganisationIdentification" name="OrganisationIdentification"/>
+    <wsdl:part element="common:UserName" name="UserName"/>
+    <wsdl:part element="common:ApplicationName" name="ApplicationName"/>
+  </wsdl:message>
+  <wsdl:message name="ChangeOrganisationRequest">
+    <wsdl:part element="dman:ChangeOrganisationRequest" name="ChangeOrganisationRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ChangeOrganisationResponse">
+    <wsdl:part element="dman:ChangeOrganisationResponse" name="ChangeOrganisationResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="UpdateDeviceAuthorisationsHeader">
+    <wsdl:part element="common:OrganisationIdentification" name="OrganisationIdentification"/>
+    <wsdl:part element="common:UserName" name="UserName"/>
+    <wsdl:part element="common:ApplicationName" name="ApplicationName"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateDeviceAuthorisationsRequest">
+    <wsdl:part element="dman:UpdateDeviceAuthorisationsRequest" name="UpdateDeviceAuthorisationsRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="CreateOrganisationHeader">
+    <wsdl:part element="common:OrganisationIdentification" name="OrganisationIdentification"/>
+    <wsdl:part element="common:UserName" name="UserName"/>
+    <wsdl:part element="common:ApplicationName" name="ApplicationName"/>
+  </wsdl:message>
+  <wsdl:message name="CreateOrganisationRequest">
+    <wsdl:part element="dman:CreateOrganisationRequest" name="CreateOrganisationRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="CreateOrganisationResponse">
+    <wsdl:part element="dman:CreateOrganisationResponse" name="CreateOrganisationResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="UpdateDeviceAuthorisationsResponse">
+    <wsdl:part element="dman:UpdateDeviceAuthorisationsResponse" name="UpdateDeviceAuthorisationsResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="RemoveDeviceHeader">
+    <wsdl:part element="common:OrganisationIdentification" name="OrganisationIdentification"/>
+    <wsdl:part element="common:UserName" name="UserName"/>
+    <wsdl:part element="common:ApplicationName" name="ApplicationName"/>
+  </wsdl:message>
+  <wsdl:message name="RemoveDeviceRequest">
+    <wsdl:part element="dman:RemoveDeviceRequest" name="RemoveDeviceRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="RemoveDeviceResponse">
+    <wsdl:part element="dman:RemoveDeviceResponse" name="RemoveDeviceResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SetOwnerHeader">
+    <wsdl:part element="common:OrganisationIdentification" name="OrganisationIdentification"/>
+    <wsdl:part element="common:UserName" name="UserName"/>
+    <wsdl:part element="common:ApplicationName" name="ApplicationName"/>
+  </wsdl:message>
+  <wsdl:message name="SetOwnerRequest">
+    <wsdl:part element="dman:SetOwnerRequest" name="SetOwnerRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SetOwnerResponse">
+    <wsdl:part element="dman:SetOwnerResponse" name="SetOwnerResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="UpdateKeyHeader">
+    <wsdl:part element="common:OrganisationIdentification" name="OrganisationIdentification"/>
+    <wsdl:part element="common:UserName" name="UserName"/>
+    <wsdl:part element="common:ApplicationName" name="ApplicationName"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateKeyRequest">
+    <wsdl:part element="dman:UpdateKeyRequest" name="UpdateKeyRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="UpdateKeyResponse">
+    <wsdl:part element="dman:UpdateKeyResponse" name="UpdateKeyResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="RevokeKeyHeader">
+    <wsdl:part element="common:OrganisationIdentification" name="OrganisationIdentification"/>
+    <wsdl:part element="common:UserName" name="UserName"/>
+    <wsdl:part element="common:ApplicationName" name="ApplicationName"/>
+  </wsdl:message>
+  <wsdl:message name="RevokeKeyRequest">
+    <wsdl:part element="dman:RevokeKeyRequest" name="RevokeKeyRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="RevokeKeyResponse">
+    <wsdl:part element="dman:RevokeKeyResponse" name="RevokeKeyResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="DeviceManagementPort">
+    <wsdl:operation name="FindMessageLogs">
+      <wsdl:input message="tns:FindMessageLogsRequest" name="FindMessageLogsRequest"></wsdl:input>
+      <wsdl:output message="tns:FindMessageLogsResponse" name="FindMessageLogsResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindDeviceAuthorisations">
+      <wsdl:input message="tns:FindDeviceAuthorisationsRequest" name="FindDeviceAuthorisationsRequest"></wsdl:input>
+      <wsdl:output message="tns:FindDeviceAuthorisationsResponse" name="FindDeviceAuthorisationsResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindDevicesWhichHaveNoOwner">
+      <wsdl:input message="tns:FindDevicesWhichHaveNoOwnerRequest" name="FindDevicesWhichHaveNoOwnerRequest"></wsdl:input>
+      <wsdl:output message="tns:FindDevicesWhichHaveNoOwnerResponse" name="FindDevicesWhichHaveNoOwnerResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrganisation">
+      <wsdl:input message="tns:CreateOrganisationRequest" name="CreateOrganisationRequest"></wsdl:input>
+      <wsdl:output message="tns:CreateOrganisationResponse" name="CreateOrganisationResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveOrganisation">
+      <wsdl:input message="tns:RemoveOrganisationRequest" name="RemoveOrganisationRequest"></wsdl:input>
+      <wsdl:output message="tns:RemoveOrganisationResponse" name="RemoveOrganisationResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivateOrganisation">
+      <wsdl:input message="tns:ActivateOrganisationRequest" name="ActivateOrganisationRequest"></wsdl:input>
+      <wsdl:output message="tns:ActivateOrganisationResponse" name="ActivateOrganisationResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeOrganisation">
+      <wsdl:input message="tns:ChangeOrganisationRequest" name="ChangeOrganisationRequest"></wsdl:input>
+      <wsdl:output message="tns:ChangeOrganisationResponse" name="ChangeOrganisationResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDeviceAuthorisations">
+      <wsdl:input message="tns:UpdateDeviceAuthorisationsRequest" name="UpdateDeviceAuthorisationsRequest"></wsdl:input>
+      <wsdl:output message="tns:UpdateDeviceAuthorisationsResponse" name="UpdateDeviceAuthorisationsResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveDevice">
+      <wsdl:input message="tns:RemoveDeviceRequest" name="RemoveDeviceRequest"></wsdl:input>
+      <wsdl:output message="tns:RemoveDeviceResponse" name="RemoveDeviceResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetOwner">
+      <wsdl:input message="tns:SetOwnerRequest" name="SetOwnerRequest"></wsdl:input>
+      <wsdl:output message="tns:SetOwnerResponse" name="SetOwnerResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateKey">
+      <wsdl:input message="tns:UpdateKeyRequest" name="UpdateKeyRequest"></wsdl:input>
+      <wsdl:output message="tns:UpdateKeyResponse" name="UpdateKeyResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RevokeKey">
+      <wsdl:input message="tns:RevokeKeyRequest" name="RevokeKeyRequest"></wsdl:input>
+      <wsdl:output message="tns:RevokeKeyResponse" name="RevokeKeyResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DeviceManagementPortSoap11" type="tns:DeviceManagementPort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="FindMessageLogs">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="FindMessageLogsRequest">
+        <soap:header message="tns:FindMessageLogsHeader" part="OrganisationIdentification" use="literal"/>
+        <soap:header message="tns:FindMessageLogsHeader" part="UserName" use="literal"/>
+        <soap:header message="tns:FindMessageLogsHeader" part="ApplicationName" use="literal"/>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="FindMessageLogsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindDeviceAuthorisations">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="FindDeviceAuthorisationsRequest">
+        <soap:header message="tns:FindDeviceAuthorisationsHeader" part="OrganisationIdentification" use="literal"/>
+        <soap:header message="tns:FindDeviceAuthorisationsHeader" part="UserName" use="literal"/>
+        <soap:header message="tns:FindDeviceAuthorisationsHeader" part="ApplicationName" use="literal"/>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="FindDeviceAuthorisationsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindDevicesWhichHaveNoOwner">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="FindDevicesWhichHaveNoOwnerRequest">
+        <soap:header message="tns:FindDevicesWhichHaveNoOwnerHeader" part="OrganisationIdentification" use="literal"/>
+        <soap:header message="tns:FindDevicesWhichHaveNoOwnerHeader" part="UserName" use="literal"/>
+        <soap:header message="tns:FindDevicesWhichHaveNoOwnerHeader" part="ApplicationName" use="literal"/>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="FindDevicesWhichHaveNoOwnerResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrganisation">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="CreateOrganisationRequest">
+        <soap:header message="tns:CreateOrganisationHeader" part="OrganisationIdentification" use="literal"/>
+        <soap:header message="tns:CreateOrganisationHeader" part="UserName" use="literal"/>
+        <soap:header message="tns:CreateOrganisationHeader" part="ApplicationName" use="literal"/>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="CreateOrganisationResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveOrganisation">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="RemoveOrganisationRequest">
+        <soap:header message="tns:RemoveOrganisationHeader" part="OrganisationIdentification" use="literal"/>
+        <soap:header message="tns:RemoveOrganisationHeader" part="UserName" use="literal"/>
+        <soap:header message="tns:RemoveOrganisationHeader" part="ApplicationName" use="literal"/>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="RemoveOrganisationResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivateOrganisation">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="ActivateOrganisationRequest">
+        <soap:header message="tns:ActivateOrganisationHeader" part="OrganisationIdentification" use="literal"/>
+        <soap:header message="tns:ActivateOrganisationHeader" part="UserName" use="literal"/>
+        <soap:header message="tns:ActivateOrganisationHeader" part="ApplicationName" use="literal"/>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ActivateOrganisationResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeOrganisation">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="ChangeOrganisationRequest">
+        <soap:header message="tns:ChangeOrganisationHeader" part="OrganisationIdentification" use="literal"/>
+        <soap:header message="tns:ChangeOrganisationHeader" part="UserName" use="literal"/>
+        <soap:header message="tns:ChangeOrganisationHeader" part="ApplicationName" use="literal"/>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ChangeOrganisationResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDeviceAuthorisations">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="UpdateDeviceAuthorisationsRequest">
+        <soap:header message="tns:UpdateDeviceAuthorisationsHeader" part="OrganisationIdentification" use="literal"/>
+        <soap:header message="tns:UpdateDeviceAuthorisationsHeader" part="UserName" use="literal"/>
+        <soap:header message="tns:UpdateDeviceAuthorisationsHeader" part="ApplicationName" use="literal"/>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="UpdateDeviceAuthorisationsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveDevice">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="RemoveDeviceRequest">
+        <soap:header message="tns:RemoveDeviceHeader" part="OrganisationIdentification" use="literal"/>
+        <soap:header message="tns:RemoveDeviceHeader" part="UserName" use="literal"/>
+        <soap:header message="tns:RemoveDeviceHeader" part="ApplicationName" use="literal"/>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="RemoveDeviceResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetOwner">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="SetOwnerRequest">
+        <soap:header message="tns:SetOwnerHeader" part="OrganisationIdentification" use="literal"/>
+        <soap:header message="tns:SetOwnerHeader" part="UserName" use="literal"/>
+        <soap:header message="tns:SetOwnerHeader" part="ApplicationName" use="literal"/>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="SetOwnerResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateKey">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="UpdateKeyRequest">
+        <soap:header message="tns:UpdateKeyHeader" part="OrganisationIdentification" use="literal"/>
+        <soap:header message="tns:UpdateKeyHeader" part="UserName" use="literal"/>
+        <soap:header message="tns:UpdateKeyHeader" part="ApplicationName" use="literal"/>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="UpdateKeyResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RevokeKey">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="RevokeKeyRequest">
+        <soap:header message="tns:RevokeKeyHeader" part="OrganisationIdentification" use="literal"/>
+        <soap:header message="tns:RevokeKeyHeader" part="UserName" use="literal"/>
+        <soap:header message="tns:RevokeKeyHeader" part="ApplicationName" use="literal"/>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="RevokeKeyResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DeviceManagementPortService">
+    <wsdl:port binding="tns:DeviceManagementPortSoap11" name="DeviceManagementPortSoap11">
+      <soap:address location="https://localhost:443/osgp-adapter-ws-admin/admin/deviceManagementService/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>https://localhost/osgp-adapter-ws-admin/wsdl/admin/schemas/devicemanagement.xsd</con:url><con:content><![CDATA[<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.alliander.com/schemas/osgp/admin/devicemanagement/2014/10" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:common="http://www.alliander.com/schemas/osgp/common/2014/10" xmlns:tns="http://www.alliander.com/schemas/osgp/admin/devicemanagement/2014/10">
+  <xsd:import namespace="http://www.alliander.com/schemas/osgp/common/2014/10" schemaLocation="common.xsd"/>
+  <xsd:element name="CreateOrganisationRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Organisation" type="tns:Organisation"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="CreateOrganisationResponse">
+    <xsd:complexType/>
+  </xsd:element>
+  <xsd:element name="RemoveOrganisationRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="OrganisationIdentification" type="common:Identification"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="RemoveOrganisationResponse">
+    <xsd:complexType/>
+  </xsd:element>
+  <xsd:element name="ActivateOrganisationRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="OrganisationIdentification" type="common:Identification"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="ActivateOrganisationResponse">
+    <xsd:complexType/>
+  </xsd:element>
+  <xsd:element name="ChangeOrganisationRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="OrganisationIdentification" type="common:Identification"/>
+        <xsd:element name="NewOrganisationIdentification" type="common:Identification"/>
+        <xsd:element name="NewOrganisationName" type="xsd:string"/>
+        <xsd:element name="NewOrganisationPlatformFunctionGroup" type="tns:PlatformFunctionGroup"/>
+        <xsd:element maxOccurs="unbounded" name="NewOrganisationPlatformDomains" type="tns:PlatformDomain"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="ChangeOrganisationResponse">
+    <xsd:complexType/>
+  </xsd:element>
+  <xsd:element name="FindMessageLogsRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="DeviceIdentification" type="common:Identification"/>
+        <xsd:element name="Page" type="xsd:int"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="FindMessageLogsResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="MessageLogPage" type="tns:MessageLogPage"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="UpdateDeviceAuthorisationsRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element maxOccurs="unbounded" name="DeviceAuthorisations" type="tns:DeviceAuthorisation"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="UpdateDeviceAuthorisationsResponse">
+    <xsd:complexType/>
+  </xsd:element>
+  <xsd:element name="FindDeviceAuthorisationsRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="DeviceIdentification" type="common:Identification"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="FindDeviceAuthorisationsResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element maxOccurs="unbounded" minOccurs="0" name="DeviceAuthorisations" type="tns:DeviceAuthorisation"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="RemoveDeviceRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="DeviceIdentification" type="common:Identification"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="RemoveDeviceResponse">
+    <xsd:complexType/>
+  </xsd:element>
+  <xsd:element name="FindDevicesWhichHaveNoOwnerRequest">
+    <xsd:complexType>
+      <xsd:sequence></xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="FindDevicesWhichHaveNoOwnerResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element maxOccurs="unbounded" name="Devices" type="tns:Device"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="SetOwnerRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="DeviceIdentification" type="common:Identification"/>
+        <xsd:element name="OrganisationIdentification" type="common:Identification"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="SetOwnerResponse">
+    <xsd:complexType/>
+  </xsd:element>
+  <xsd:element name="UpdateKeyRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="DeviceIdentification" type="common:Identification"/>
+        <xsd:element name="PublicKey" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="UpdateKeyResponse">
+    <xsd:complexType/>
+  </xsd:element>
+  <xsd:element name="RevokeKeyRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="DeviceIdentification" type="common:Identification"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="RevokeKeyResponse">
+    <xsd:complexType/>
+  </xsd:element>
+  <xsd:simpleType name="IPType">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="((1?[0-9]?[0-9]|2[0-4][0-9]|25[0-5]).){3}(1?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="Device">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="DeviceUid" type="xsd:string"/>
+      <xsd:element name="DeviceIdentification" type="common:Identification"/>
+      <xsd:element minOccurs="0" name="Owner" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="ContainerPostalCode" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="ContainerCity" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="ContainerStreet" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="ContainerNumber" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="GpsLatitude" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="GpsLongitude" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="NetworkAddress" type="tns:IPType"/>
+      <xsd:element minOccurs="0" name="DeviceType" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Activated" type="xsd:boolean"/>
+      <xsd:element minOccurs="0" name="HasSchedule" type="xsd:boolean"/>
+      <xsd:element minOccurs="0" name="PublicKeyPresent" type="xsd:boolean"/>
+      <xsd:sequence>
+        <xsd:element maxOccurs="unbounded" minOccurs="0" name="Organisations" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="DevicePage">
+    <xsd:sequence>
+      <xsd:element name="TotalPages" type="xsd:int"/>
+      <xsd:element maxOccurs="unbounded" name="Devices" type="tns:Device"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="DeviceFilter">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="OrganisationIdentification" type="common:Identification"/>
+      <xsd:element minOccurs="0" name="DeviceIdentification" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="City" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="PostalCode" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Street" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Number" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="SortDir" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="SortedBy" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Organisation">
+    <xsd:sequence>
+      <xsd:element name="OrganisationIdentification" type="common:Identification"/>
+      <xsd:element name="Name" type="xsd:string"/>
+      <xsd:element name="Prefix" type="xsd:string"/>
+      <xsd:element name="FunctionGroup" type="tns:PlatformFunctionGroup"/>
+      <xsd:element name="Enabled" type="xsd:boolean"/>
+      <xsd:element maxOccurs="unbounded" name="Domains" type="tns:PlatformDomain"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MessageLog">
+    <xsd:sequence>
+      <xsd:element name="Timestamp" type="xsd:dateTime"/>
+      <xsd:element name="OrganisationIdentification" type="common:Identification"/>
+      <xsd:element name="DeviceUid" type="xsd:string"/>
+      <xsd:element name="DeviceIdentification" type="common:Identification"/>
+      <xsd:element name="DecodedMessage" type="xsd:string"/>
+      <xsd:element name="EncodedMessage" type="xsd:string"/>
+      <xsd:element name="Incoming" type="xsd:boolean"/>
+      <xsd:element name="Valid" type="xsd:boolean"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MessageLogPage">
+    <xsd:sequence>
+      <xsd:element name="TotalPages" type="xsd:int"/>
+      <xsd:element maxOccurs="unbounded" name="MessageLogs" type="tns:MessageLog"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="PlatformFunctionGroup">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="ADMIN"/>
+      <xsd:enumeration value="USER"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="DeviceFunctionGroup">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="OWNER"/>
+      <xsd:enumeration value="INSTALLATION"/>
+      <xsd:enumeration value="AD_HOC"/>
+      <xsd:enumeration value="MANAGEMENT"/>
+      <xsd:enumeration value="FIRMWARE"/>
+      <xsd:enumeration value="SCHEDULING"/>
+      <xsd:enumeration value="TARIFF_SCHEDULING"/>
+      <xsd:enumeration value="CONFIGURATION"/>
+      <xsd:enumeration value="MONITORING"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="PlatformDomain">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="COMMON"/>
+      <xsd:enumeration value="PUBLIC_LIGHTING"/>
+      <xsd:enumeration value="TARIFF_SWITCHING"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="DeviceAuthorisation">
+    <xsd:sequence>
+      <xsd:element name="deviceIdentification" type="common:Identification"/>
+      <xsd:element name="organisationIdentification" type="common:Identification"/>
+      <xsd:element name="functionGroup" type="tns:DeviceFunctionGroup"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="EventNotificationType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="DIAG_EVENTS"/>
+      <xsd:enumeration value="HARDWARE_FAILURE"/>
+      <xsd:enumeration value="LIGHT_EVENTS"/>
+      <xsd:enumeration value="TARIFF_EVENTS"/>
+      <xsd:enumeration value="MONITOR_EVENTS"/>
+      <xsd:enumeration value="FIRMWARE_EVENTS"/>
+      <xsd:enumeration value="COMM_EVENTS"/>
+      <xsd:enumeration value="SECURITY_EVENTS"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="EventType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="DIAG_EVENTS_GENERAL"/>
+      <xsd:enumeration value="HARDWARE_FAILURE_RELAY"/>
+      <xsd:enumeration value="LIGHT_FAILURE_DALI_COMMUNICATION"/>
+      <xsd:enumeration value="LIGHT_FAILURE_BALLAST"/>
+      <xsd:enumeration value="LIGHT_EVENTS_LIGHT_ON"/>
+      <xsd:enumeration value="LIGHT_EVENTS_LIGHT_OFF"/>
+      <xsd:enumeration value="MONITOR_EVENTS_LONG_BUFFER_FULL"/>
+      <xsd:enumeration value="FIRMWARE_EVENTS_ACTIVATING"/>
+      <xsd:enumeration value="FIRMWARE_EVENTS_DOWNLOAD_NOTFOUND"/>
+      <xsd:enumeration value="FIRMWARE_EVENTS_DOWNLOAD_FAILED"/>
+      <xsd:enumeration value="LIGHT_FAILURE_TARIFF_SWITCH_ATTEMPT"/>
+      <xsd:enumeration value="TARIFF_EVENTS_TARIFF_ON"/>
+      <xsd:enumeration value="TARIFF_EVENTS_TARIFF_OFF"/>
+      <xsd:enumeration value="MONITOR_FAILURE_P1_COMMUNICATION"/>
+      <xsd:enumeration value="COMM_EVENTS_ALTERNATIVE_CHANNEL"/>
+      <xsd:enumeration value="COMM_EVENTS_RECOVERED_CHANNEL"/>
+      <xsd:enumeration value="SECURITY_EVENTS_OUT_OF_SEQUENCE"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="Event">
+    <xsd:sequence>
+      <xsd:element name="deviceIdentification" type="common:Identification"/>
+      <xsd:element name="timestamp" type="xsd:dateTime"/>
+      <xsd:element name="eventType" type="tns:EventType"/>
+      <xsd:element name="description" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="index" type="xsd:int"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://localhost/osgp-adapter-ws-admin/wsdl/admin/schemas/common.xsd</con:url><con:content><![CDATA[<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.alliander.com/schemas/osgp/common/2014/10" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.alliander.com/schemas/osgp/common/2014/10">
+  <xsd:element name="OrganisationIdentification" type="tns:Identification"/>
+  <xsd:element name="UserName" type="tns:Identification"/>
+  <xsd:element name="ApplicationName" type="tns:Identification"/>
+  <xsd:simpleType name="Identification">
+    <xsd:restriction base="xsd:normalizedString">
+      <xsd:minLength value="1"/>
+      <xsd:maxLength value="40"/>
+      <xsd:pattern value="[^ ]{0,40}"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="Page">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="1" name="TotalPages" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="1" name="PageSize" type="xsd:int"/>
+      <xsd:element maxOccurs="1" minOccurs="1" name="CurrentPage" type="xsd:int"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="CorrelationUid">
+    <xsd:restriction base="xsd:normalizedString">
+      <xsd:minLength value="20"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="AsyncRequest">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="CorrelationUid" type="tns:CorrelationUid"/>
+      <xsd:element minOccurs="1" name="DeviceId" type="tns:Identification"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="AsyncResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="CorrelationUid" type="tns:CorrelationUid"/>
+      <xsd:element minOccurs="1" name="DeviceId" type="tns:Identification"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="OsgpResultType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="OK"/>
+      <xsd:enumeration value="NOT FOUND"/>
+      <xsd:enumeration value="NOT OK"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:element name="FunctionalFault">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element maxOccurs="1" minOccurs="1" name="Code" type="xsd:int"/>
+        <xsd:element maxOccurs="1" minOccurs="1" name="Message" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="1" name="Component" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="1" name="InnerException" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="1" name="InnerMessage" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="TechnicalFault">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element maxOccurs="1" minOccurs="1" name="Message" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="1" name="Component" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="1" name="InnerException" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="1" name="InnerMessage" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://localhost:443/osgp-adapter-ws-admin/admin/deviceManagementService/</con:endpoint></con:endpoints><con:operation id="ac3784b3-9416-40c5-ac9b-a9efbd7620c6" isOneWay="false" action="" name="ActivateOrganisation" bindingOperationName="ActivateOrganisation" type="Request-Response" outputName="ActivateOrganisationResponse" inputName="ActivateOrganisationRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="89a91670-bfb9-4289-8520-5328e94dcd04" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://localhost:443/osgp-adapter-ws-admin/admin/deviceManagementService/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.alliander.com/schemas/osgp/common/2014/10" xmlns:ns1="http://www.alliander.com/schemas/osgp/admin/devicemanagement/2014/10">
+   <soapenv:Header>
+      <ns:ApplicationName>${#Project#soapHeaderAppName}</ns:ApplicationName>
+      <ns:UserName>${#Project#soapHeaderUserName}</ns:UserName>
+      <ns:OrganisationIdentification>${#Project#soapHeaderOrgId}</ns:OrganisationIdentification>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ns1:ActivateOrganisationRequest>
+         <!--type: Identification-->
+         <ns1:OrganisationIdentification>new-org</ns1:OrganisationIdentification>
+      </ns1:ActivateOrganisationRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.alliander.com/definitions/osgp/admin/devicemanagement-v1.0/DeviceManagementPort/ActivateOrganisationRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="993ac711-e9a0-42e1-8312-49ee49103f8d" isOneWay="false" action="" name="ChangeOrganisation" bindingOperationName="ChangeOrganisation" type="Request-Response" outputName="ChangeOrganisationResponse" inputName="ChangeOrganisationRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d8d4c5bc-7317-4495-9192-caf09432903e" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://localhost:443/osgp-adapter-ws-admin/admin/deviceManagementService/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.alliander.com/schemas/osgp/common/2014/10" xmlns:ns1="http://www.alliander.com/schemas/osgp/admin/devicemanagement/2014/10">
+   <soapenv:Header>
+      <ns:ApplicationName>${#Project#soapHeaderAppName}</ns:ApplicationName>
+      <ns:UserName>${#Project#soapHeaderUserName}</ns:UserName>
+      <ns:OrganisationIdentification>${#Project#soapHeaderOrgId}</ns:OrganisationIdentification>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ns1:ChangeOrganisationRequest>
+         <!--type: Identification-->
+         <ns1:OrganisationIdentification>new-org</ns1:OrganisationIdentification>
+         <!--type: Identification-->
+         <ns1:NewOrganisationIdentification>changed-new-org</ns1:NewOrganisationIdentification>
+         <!--type: string-->
+         <ns1:NewOrganisationName>Changed New Organisation Identification</ns1:NewOrganisationName>
+         <!--type: PlatformFunctionGroup - enumeration: [ADMIN,USER]-->
+         <ns1:NewOrganisationPlatformFunctionGroup>ADMIN</ns1:NewOrganisationPlatformFunctionGroup>
+         <!--1 or more repetitions:-->
+         <!--type: PlatformDomain - enumeration: [COMMON,PUBLIC_LIGHTING,TARIFF_SWITCHING]-->
+         <ns1:NewOrganisationPlatformDomains>COMMON</ns1:NewOrganisationPlatformDomains>
+      </ns1:ChangeOrganisationRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.alliander.com/definitions/osgp/admin/devicemanagement-v1.0/DeviceManagementPort/ChangeOrganisationRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="cb57c255-ea2e-4926-8b5b-b7d6cc713581" isOneWay="false" action="" name="CreateOrganisation" bindingOperationName="CreateOrganisation" type="Request-Response" outputName="CreateOrganisationResponse" inputName="CreateOrganisationRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="4768de19-b1bd-47bf-96dc-28eb56f16f94" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://localhost:443/osgp-adapter-ws-admin/admin/deviceManagementService/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.alliander.com/schemas/osgp/common/2014/10" xmlns:ns1="http://www.alliander.com/schemas/osgp/admin/devicemanagement/2014/10">
+   <soapenv:Header>
+      <ns:ApplicationName>${#Project#soapHeaderAppName}</ns:ApplicationName>
+      <ns:UserName>${#Project#soapHeaderUserName}</ns:UserName>
+      <ns:OrganisationIdentification>${#Project#soapHeaderOrgId}</ns:OrganisationIdentification>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ns1:CreateOrganisationRequest>
+         <ns1:Organisation>
+            <!--type: Identification-->
+            <ns1:OrganisationIdentification>new-org</ns1:OrganisationIdentification>
+            <!--type: string-->
+            <ns1:Name>New Organisation</ns1:Name>
+            <!--type: string-->
+            <ns1:Prefix>NOR</ns1:Prefix>
+            <!--type: PlatformFunctionGroup - enumeration: [ADMIN,USER]-->
+            <ns1:FunctionGroup>ADMIN</ns1:FunctionGroup>
+            <!--type: boolean-->
+            <ns1:Enabled>false</ns1:Enabled>
+            <!--1 or more repetitions:-->
+            <!--type: PlatformDomain - enumeration: [COMMON,PUBLIC_LIGHTING,TARIFF_SWITCHING]-->
+            <ns1:Domains>COMMON</ns1:Domains>
+            <ns1:Domains>PUBLIC_LIGHTING</ns1:Domains>
+            <ns1:Domains>TARIFF_SWITCHING</ns1:Domains>
+         </ns1:Organisation>
+      </ns1:CreateOrganisationRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.alliander.com/definitions/osgp/admin/devicemanagement-v1.0/DeviceManagementPort/CreateOrganisationRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="cec22b87-c3cb-44f8-8459-06eddb39efe8" isOneWay="false" action="" name="FindDeviceAuthorisations" bindingOperationName="FindDeviceAuthorisations" type="Request-Response" outputName="FindDeviceAuthorisationsResponse" inputName="FindDeviceAuthorisationsRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="19734f41-2f11-47e8-94d9-8d7ea4706ffb" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://localhost:443/osgp-adapter-ws-admin/admin/deviceManagementService/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.alliander.com/schemas/osgp/common/2014/10" xmlns:ns1="http://www.alliander.com/schemas/osgp/admin/devicemanagement/2014/10">
+   <soapenv:Header>
+      <ns:ApplicationName>${#Project#soapHeaderAppName}</ns:ApplicationName>
+      <ns:UserName>${#Project#soapHeaderUserName}</ns:UserName>
+      <ns:OrganisationIdentification>${#Project#soapHeaderOrgId}</ns:OrganisationIdentification>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ns1:FindDeviceAuthorisationsRequest>
+         <!--type: Identification-->
+         <ns1:DeviceIdentification>${#Project#deviceIdentification}</ns1:DeviceIdentification>
+      </ns1:FindDeviceAuthorisationsRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.alliander.com/definitions/osgp/admin/devicemanagement-v1.0/DeviceManagementPort/FindDeviceAuthorisationsRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="719a4c13-0304-485a-8ba5-69458b7b1771" isOneWay="false" action="" name="FindDevicesWhichHaveNoOwner" bindingOperationName="FindDevicesWhichHaveNoOwner" type="Request-Response" outputName="FindDevicesWhichHaveNoOwnerResponse" inputName="FindDevicesWhichHaveNoOwnerRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="85412c10-c8d2-4ab3-ac4e-5bd6755fd02e" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://localhost:443/osgp-adapter-ws-admin/admin/deviceManagementService/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.alliander.com/schemas/osgp/common/2014/10" xmlns:ns1="http://www.alliander.com/schemas/osgp/admin/devicemanagement/2014/10">
+   <soapenv:Header>
+      <ns:ApplicationName>${#Project#soapHeaderAppName}</ns:ApplicationName>
+      <ns:UserName>${#Project#soapHeaderUserName}</ns:UserName>
+      <ns:OrganisationIdentification>${#Project#soapHeaderOrgId}</ns:OrganisationIdentification>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ns1:FindDevicesWhichHaveNoOwnerRequest/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.alliander.com/definitions/osgp/admin/devicemanagement-v1.0/DeviceManagementPort/FindDevicesWhichHaveNoOwnerRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="270577cc-43d1-4363-babb-c02dae60228c" isOneWay="false" action="" name="FindMessageLogs" bindingOperationName="FindMessageLogs" type="Request-Response" outputName="FindMessageLogsResponse" inputName="FindMessageLogsRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a1d7be24-747a-4f1e-8ca2-336014c56ce8" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://localhost:443/osgp-adapter-ws-admin/admin/deviceManagementService/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.alliander.com/schemas/osgp/common/2014/10" xmlns:ns1="http://www.alliander.com/schemas/osgp/admin/devicemanagement/2014/10">
+   <soapenv:Header>
+      <ns:ApplicationName>${#Project#soapHeaderAppName}</ns:ApplicationName>
+      <ns:UserName>${#Project#soapHeaderUserName}</ns:UserName>
+      <ns:OrganisationIdentification>${#Project#soapHeaderOrgId}</ns:OrganisationIdentification>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ns1:FindMessageLogsRequest>
+         <!--Optional:-->
+         <!--type: Identification-->
+         <ns1:DeviceIdentification>${#Project#deviceIdentification}</ns1:DeviceIdentification>
+         <!--type: int-->
+         <ns1:Page>0</ns1:Page>
+      </ns1:FindMessageLogsRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.alliander.com/definitions/osgp/admin/devicemanagement-v1.0/DeviceManagementPort/FindMessageLogsRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="b6366ce5-94ad-49ff-af23-a97f1e287a00" isOneWay="false" action="" name="RemoveDevice" bindingOperationName="RemoveDevice" type="Request-Response" outputName="RemoveDeviceResponse" inputName="RemoveDeviceRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="5cc3cfed-24ea-463f-9702-251790e1f8b4" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://localhost:443/osgp-adapter-ws-admin/admin/deviceManagementService/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.alliander.com/schemas/osgp/common/2014/10" xmlns:ns1="http://www.alliander.com/schemas/osgp/admin/devicemanagement/2014/10">
+   <soapenv:Header>
+      <ns:ApplicationName>${#Project#soapHeaderAppName}</ns:ApplicationName>
+      <ns:UserName>${#Project#soapHeaderUserName}</ns:UserName>
+      <ns:OrganisationIdentification>${#Project#soapHeaderOrgId}</ns:OrganisationIdentification>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ns1:RemoveDeviceRequest>
+         <!--type: Identification-->
+         <ns1:DeviceIdentification>${#Project#deviceIdentification}</ns1:DeviceIdentification>
+      </ns1:RemoveDeviceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.alliander.com/definitions/osgp/admin/devicemanagement-v1.0/DeviceManagementPort/RemoveDeviceRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="a49ec41c-441a-4dae-b951-88c6fbc74a98" isOneWay="false" action="" name="RemoveOrganisation" bindingOperationName="RemoveOrganisation" type="Request-Response" outputName="RemoveOrganisationResponse" inputName="RemoveOrganisationRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="e62b8b0a-5c45-4250-bda3-58ffd00efe21" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://localhost:443/osgp-adapter-ws-admin/admin/deviceManagementService/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.alliander.com/schemas/osgp/common/2014/10" xmlns:ns1="http://www.alliander.com/schemas/osgp/admin/devicemanagement/2014/10">
+   <soapenv:Header>
+      <ns:ApplicationName>${#Project#soapHeaderAppName}</ns:ApplicationName>
+      <ns:UserName>${#Project#soapHeaderUserName}</ns:UserName>
+      <ns:OrganisationIdentification>${#Project#soapHeaderOrgId}</ns:OrganisationIdentification>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ns1:RemoveOrganisationRequest>
+         <!--type: Identification-->
+         <ns1:OrganisationIdentification>new-org</ns1:OrganisationIdentification>
+      </ns1:RemoveOrganisationRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.alliander.com/definitions/osgp/admin/devicemanagement-v1.0/DeviceManagementPort/RemoveOrganisationRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="ef34a0ad-97b6-4efe-a9f6-da799de09682" isOneWay="false" action="" name="RevokeKey" bindingOperationName="RevokeKey" type="Request-Response" outputName="RevokeKeyResponse" inputName="RevokeKeyRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="4519935d-6cd3-4969-9ef0-100929440e4d" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://localhost:443/osgp-adapter-ws-admin/admin/deviceManagementService/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.alliander.com/schemas/osgp/common/2014/10" xmlns:ns1="http://www.alliander.com/schemas/osgp/admin/devicemanagement/2014/10">
+   <soapenv:Header>
+      <ns:ApplicationName>${#Project#soapHeaderAppName}</ns:ApplicationName>
+      <ns:UserName>${#Project#soapHeaderUserName}</ns:UserName>
+      <ns:OrganisationIdentification>${#Project#soapHeaderOrgId}</ns:OrganisationIdentification>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ns1:RevokeKeyRequest>
+         <!--type: Identification-->
+         <ns1:DeviceIdentification>${#Project#deviceIdentification}</ns1:DeviceIdentification>
+      </ns1:RevokeKeyRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.alliander.com/definitions/osgp/admin/devicemanagement-v1.0/DeviceManagementPort/RevokeKeyRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="fa110420-037a-4bf8-af8d-c93ef6cd5a31" isOneWay="false" action="" name="SetOwner" bindingOperationName="SetOwner" type="Request-Response" outputName="SetOwnerResponse" inputName="SetOwnerRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="63fc8724-dbf3-45f2-9bdd-908c8203c7b9" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://localhost:443/osgp-adapter-ws-admin/admin/deviceManagementService/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.alliander.com/schemas/osgp/common/2014/10" xmlns:ns1="http://www.alliander.com/schemas/osgp/admin/devicemanagement/2014/10">
+   <soapenv:Header>
+      <ns:ApplicationName>${#Project#soapHeaderAppName}</ns:ApplicationName>
+      <ns:UserName>${#Project#soapHeaderUserName}</ns:UserName>
+      <ns:OrganisationIdentification>${#Project#soapHeaderOrgId}</ns:OrganisationIdentification>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ns1:SetOwnerRequest>
+         <!--type: Identification-->
+         <ns1:DeviceIdentification>${#Project#deviceIdentification}</ns1:DeviceIdentification>
+         <!--type: Identification-->
+         <ns1:OrganisationIdentification>test-org</ns1:OrganisationIdentification>
+      </ns1:SetOwnerRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.alliander.com/definitions/osgp/admin/devicemanagement-v1.0/DeviceManagementPort/SetOwnerRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="398eac85-e5bf-45c7-b07e-c6da82d8cbd3" isOneWay="false" action="" name="UpdateDeviceAuthorisations" bindingOperationName="UpdateDeviceAuthorisations" type="Request-Response" outputName="UpdateDeviceAuthorisationsResponse" inputName="UpdateDeviceAuthorisationsRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="18bb7245-c87a-4588-addc-9a34fc8644c6" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://localhost:443/osgp-adapter-ws-admin/admin/deviceManagementService/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.alliander.com/schemas/osgp/common/2014/10" xmlns:ns1="http://www.alliander.com/schemas/osgp/admin/devicemanagement/2014/10">
+   <soapenv:Header>
+      <ns:ApplicationName>${#Project#soapHeaderAppName}</ns:ApplicationName>
+      <ns:UserName>${#Project#soapHeaderUserName}</ns:UserName>
+      <ns:OrganisationIdentification>${#Project#soapHeaderOrgId}</ns:OrganisationIdentification>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ns1:UpdateDeviceAuthorisationsRequest>
+         <!--1 or more repetitions:-->
+         <ns1:DeviceAuthorisations>
+            <!--type: Identification-->
+            <ns1:deviceIdentification>${#Project#deviceIdentification}</ns1:deviceIdentification>
+            <!--type: Identification-->
+            <ns1:organisationIdentification>some-other-org</ns1:organisationIdentification>
+            <!--type: DeviceFunctionGroup - enumeration: [OWNER,INSTALLATION,AD_HOC,MANAGEMENT,FIRMWARE,SCHEDULING,TARIFF_SCHEDULING,CONFIGURATION,MONITORING]-->
+            <ns1:functionGroup>MONITORING</ns1:functionGroup>
+         </ns1:DeviceAuthorisations>
+      </ns1:UpdateDeviceAuthorisationsRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.alliander.com/definitions/osgp/admin/devicemanagement-v1.0/DeviceManagementPort/UpdateDeviceAuthorisationsRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="183b8615-46bf-4c08-b2bf-9a8c3b9b8ea6" isOneWay="false" action="" name="UpdateKey" bindingOperationName="UpdateKey" type="Request-Response" outputName="UpdateKeyResponse" inputName="UpdateKeyRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="1fa56698-4617-421b-9480-e95c90e8b0f2" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://localhost:443/osgp-adapter-ws-admin/admin/deviceManagementService/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.alliander.com/schemas/osgp/common/2014/10" xmlns:ns1="http://www.alliander.com/schemas/osgp/admin/devicemanagement/2014/10">
+   <soapenv:Header>
+      <ns:ApplicationName>${#Project#soapHeaderAppName}</ns:ApplicationName>
+      <ns:UserName>${#Project#soapHeaderUserName}</ns:UserName>
+      <ns:OrganisationIdentification>${#Project#soapHeaderOrgId}</ns:OrganisationIdentification>
+   </soapenv:Header>
+   <soapenv:Body>
+      <ns1:UpdateKeyRequest>
+         <!--type: Identification-->
+         <ns1:DeviceIdentification>${#Project#deviceIdentification}</ns1:DeviceIdentification>
+         <!--type: string-->
+         <ns1:PublicKey>MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEFhUImXFJdqmputquVAc2CPdnn9Ju00M3m/Ice7wABNN+oAYKQbw/OceqvZmFF1+r4nO/vCm/f1JO5nEorE2jNQ==</ns1:PublicKey>
+      </ns1:UpdateKeyRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.alliander.com/definitions/osgp/admin/devicemanagement-v1.0/DeviceManagementPort/UpdateKeyRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties><con:property><con:name>deviceIdentification</con:name><con:value>ELS_000-00-01</con:value></con:property><con:property><con:name>soapHeaderAppName</con:name><con:value>SoapUI</con:value></con:property><con:property><con:name>soapHeaderUserName</con:name><con:value>user name</con:value></con:property><con:property><con:name>soapHeaderOrgId</con:name><con:value>test-org</con:value></con:property></con:properties><con:wssContainer><con:crypto><con:source>/home/dev/Sources/Config/certificates/osgp-ca/certs/test-org.pfx</con:source><con:password>1234</con:password><con:type>KEYSTORE</con:type></con:crypto></con:wssContainer><con:oAuth2ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
