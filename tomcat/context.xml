@@ -39,6 +39,7 @@
     <Environment name="osp/osgpAdapterWsPublicLighting/config" value="/etc/osp/osgp-adapter-ws-public-lighting.properties" type="java.lang.String" override="false" />
     <Environment name="osp/osgpAdapterWsAdmin/config" value="/etc/osp/osgp-adapter-ws-admin.properties" type="java.lang.String" override="false" />
     <Environment name="osp/osgpAdapterWsSmartMetering/config" value="/etc/osp/osgp-adapter-ws-smart-metering.properties" type="java.lang.String" override="false" />
+    <Environment name="osp/osgpAdapterWsControllableLoad/config" value="/etc/osp/osgp-adapter-ws-controllable-load.properties" type="java.lang.String" override="false" />
 
     <Environment name="osp/osgpAdapterDomainAdmin/config" value="/etc/osp/osgp-adapter-domain-admin.properties" type="java.lang.String" override="false" />
     <Environment name="osp/osgpAdapterDomainCore/config" value="/etc/osp/osgp-adapter-domain-core.properties" type="java.lang.String" override="false" />
