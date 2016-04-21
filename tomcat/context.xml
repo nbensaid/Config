@@ -66,6 +66,7 @@
     <Environment name="osp/osgpAdapterWsPublicLighting/log-config" value="/etc/osp/osgp-adapter-ws-public-lighting-logback.xml" type="java.lang.String" override="false" />
     <Environment name="osp/osgpAdapterWsAdmin/log-config" value="/etc/osp/osgp-adapter-ws-admin-logback.xml" type="java.lang.String" override="false" />
     <Environment name="osp/osgpAdapterWsSmartMetering/log-config" value="/etc/osp/osgp-adapter-ws-smart-metering-logback.xml" type="java.lang.String" override="false" />
+    <Environment name="osp/osgpAdapterWsControllableLoad/log-config" value="/etc/osp/osgp-adapter-ws-controllable-load-logback.xml" type="java.lang.String" override="false" />
 
     <Environment name="osp/osgpAdapterDomainAdmin/log-config" value="/etc/osp/osgp-adapter-domain-admin-logback.xml" type="java.lang.String" override="false" />
     <Environment name="osp/osgpAdapterDomainCore/log-config" value="/etc/osp/osgp-adapter-domain-core-logback.xml" type="java.lang.String" override="false" />
