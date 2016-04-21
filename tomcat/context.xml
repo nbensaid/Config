@@ -46,6 +46,7 @@
     <Environment name="osp/osgpAdapterDomainPublicLighting/config" value="/etc/osp/osgp-adapter-domain-publiclighting.properties" type="java.lang.String" override="false" />
     <Environment name="osp/osgpAdapterDomainTariffSwitching/config" value="/etc/osp/osgp-adapter-domain-tariffswitching.properties" type="java.lang.String" override="false" />
     <Environment name="osp/osgpAdapterDomainSmartMetering/config" value="/etc/osp/osgp-adapter-domain-smartmetering.properties" type="java.lang.String" override="false" />
+    <Environment name="osp/osgpAdapterDomainControllableLoad/config" value="/etc/osp/osgp-adapter-domain-controllableload.properties" type="java.lang.String" override="false" />
 
     <Environment name="osp/signingServer/config" value="/etc/osp/signing-server.properties" type="java.lang.String" override="false" />
     <Environment name="osp/osgpAdapterProtocolOslp/config" value="/etc/osp/osgp-adapter-protocol-oslp.properties" type="java.lang.String" override="false" />
@@ -73,6 +74,7 @@
     <Environment name="osp/osgpAdapterDomainPublicLighting/log-config" value="/etc/osp/osgp-adapter-domain-publiclighting-logback.xml" type="java.lang.String" override="false" />
     <Environment name="osp/osgpAdapterDomainTariffSwitching/log-config" value="/etc/osp/osgp-adapter-domain-tariffswitching-logback.xml" type="java.lang.String" override="false" />
     <Environment name="osp/osgpAdapterDomainSmartMetering/log-config" value="/etc/osp/osgp-adapter-domain-smartmetering-logback.xml" type="java.lang.String" override="false" />
+    <Environment name="osp/osgpAdapterDomainControllableLoad/log-config" value="/etc/osp/osgp-adapter-domain-controllableload-logback.xml" type="java.lang.String" override="false" />
 
     <Environment name="osp/signingServer/log-config" value="/etc/osp/signing-server-logback.xml" type="java.lang.String" override="false" />
     <Environment name="osp/osgpAdapterProtocolOslp/log-config" value="/etc/osp/osgp-adapter-protocol-oslp-logback.xml" type="java.lang.String" override="false" />
