@@ -22,3 +22,4 @@ exec { 'make dev user default':
 	command => '/bin/sed -i "s/vagrant/dev/g" /etc/lightdm/lightdm.conf',
 	require => [File['/etc/lightdm/lightdm.conf'], User['dev']]
 }
+

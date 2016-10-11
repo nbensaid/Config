@@ -22,7 +22,7 @@ sudo puppet apply $NOOP ./manifests/modules.pp
 echo "##############################################################"
 echo "## Update system                                            ##"
 echo "##############################################################"
-sudo puppet apply $NOOP ./manifests/update.pp
+sudo puppet apply $NOOP ./manifests/vm-corrections.pp
 
 echo "##############################################################"
 echo "## Installing JDK                                           ##"
@@ -131,6 +131,11 @@ echo "##############################################################"
 echo "## Cleanup                                                  ##"
 echo "##############################################################"
 sudo puppet apply $NOOP ./manifests/cleanup.pp
+
+echo "##############################################################"
+echo "## Restart VM in order to apply various settings            ##"
+echo "##############################################################"
+sudo puppet apply $NOOP ./manifests/restart-vm.pp
 
 echo ""
 echo "DONE"
