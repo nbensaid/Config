@@ -7,7 +7,7 @@ echo "downloading puppet.deb file to ~/Downloads folder";
 wget -q -P ~/Downloads - https://apt.puppetlabs.com/puppetlabs-release-pc1-xenial.deb
 
 echo "preparing puppet.deb file";
-sudo dpkg -i ~/Downloads/puppetlabs-release-xenial.deb
+sudo dpkg -i ~/Downloads/puppetlabs-release-pc1-xenial.deb
 
 echo "running apt-get update";
 sudo apt-get update
